@@ -78,7 +78,7 @@ class AuthenticatedMovieViewsUsers(TestCase):
 
         self.assertIn(serializer_with_genre_1.data, res.data)
         self.assertIn(serializer_with_genre_2.data, res.data)
-        self.assertNotIn(serializer_without_genre, res.data)
+        self.assertNotIn(serializer_without_genre.data, res.data)
 
     def test_filter_movies_with_actors(self):
         movie_without_actor = sample_movie()
@@ -97,7 +97,7 @@ class AuthenticatedMovieViewsUsers(TestCase):
 
         self.assertIn(serializer_with_actor_1.data, res.data)
         self.assertIn(serializer_with_actor_2.data, res.data)
-        self.assertNotIn(serializer_without_actor, res.data)
+        self.assertNotIn(serializer_without_actor.data, res.data)
 
 
     def test_filter_movie_with_title(self):
